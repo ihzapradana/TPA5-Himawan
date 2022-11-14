@@ -38,7 +38,7 @@ const Todos = (props) => {
 
     return (
         <div className='addTodos'>
-            <input type="text" onChange={(e) => handleChange(e)} className="todo-input" value={todo} />
+            <input type="text" onChange={(e) => handleChange(e)} className="todo-input" value={todo} placeholder="what to do"/>
             <motion.button className="add-btn" onClick={() => add()}><GoPlus/></motion.button>
         <br />
         {/* <ul>
