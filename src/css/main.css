@@ -11,18 +11,7 @@ html {
   font-family: "RocknRoll One", sans-serif;
 }
 
-body {
-  background: linear-gradient(
-    190deg,
-    rgb(134, 123, 205) 0%,
-    rgb(106, 90, 171) 100%
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  color: #222;
-  overflow: hidden;
-}
+
 
 .App {
   margin-top: 3rem;
@@ -34,9 +23,9 @@ body {
   display: inline;
   text-align: center;
   margin-bottom: 2rem;
-  color: #e1ebfd;
+  color: black;
 
-  text-shadow: 0 0 5px #433aa8, 3px -1px 5px #271c6c;
+  /* text-shadow: 0 0 5px #433aa8, 3px -1px 5px #271c6c; */
 }
 
 .addTodos {
@@ -46,11 +35,11 @@ body {
 
 .todo-input {
   min-width: 15rem;
-  width: 40vw;
+  width: 30vw;
 
-  max-height: 2.5rem;
-  background-color: #e1ebfd;
-  border: none;
+  height: 2.5rem;
+  background-color: whitesmoke;
+  border: groove;
   border-radius: 5px;
   padding: 0.5rem 1rem;
 
@@ -63,15 +52,15 @@ body {
 
 .add-btn {
   margin-left: 1rem;
-  background-color: #271c6c;
-  color: #e1ebfd;
-  border-radius: 50%;
-  border: 2px solid #e1ebfd;
-  font-size: 1.5rem;
+  background-color: #6558F5;
+  color: whitesmoke;
+  border-radius: 15%;
+  border: 1px solid #e1ebfd;
+  font-size: 0.9rem;
   width: 3.2rem;
-  height: 3.2rem;
+  height: 2.4rem;
   cursor: pointer;
-  box-shadow: 2px 4px 10px #271c6c;
+  /* box-shadow: 2px 4px 10px #271c6c; */
 
   display: flex;
   justify-content: center;
@@ -110,8 +99,8 @@ body {
 
 .displaytodos ul {
   list-style: none;
-  display: flex;
-  align-self: flex-start;
+  /* display: flex; */
+  align-self: center;
   flex-wrap: wrap;
   margin-left: 5%;
 }
@@ -120,14 +109,10 @@ body {
   display: flex;
   flex-direction: column;
   background: rgb(180, 182, 218);
-  background: radial-gradient(
-    circle,
-    hsla(237, 34%, 78%, 0.9) 0%,
-    hsla(219, 88%, 94%, 0.9) 100%
-  );
-
+  background: white;
+  border: 1px solid lightgray;
   margin: 0 1rem 1rem 0;
-  height: 8rem;
+  /* height: 8rem; */
   width: 18rem;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -172,11 +157,9 @@ body {
   position: absolute;
   right: 0.3rem;
   top: 0.3rem;
-  background-color: #867bcd;
-  border: 2px solid #272727;
-  color: #e1ebfd;
+  color: green;
 
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 0.3rem 1rem;
   border-radius: 20px;
 }

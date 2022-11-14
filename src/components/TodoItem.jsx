@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { AiFillEdit } from "react-icons/ai";
-import { IoCheckmarkDoneSharp, IoClose } from "react-icons/io5";
+import { IoCheckboxSharp, IoCheckmarkCircle, IoCheckmarkDone, IoCheckmarkDoneSharp, IoClose, IoTrashBin } from "react-icons/io5";
 import { motion } from "framer-motion";
 
 const TodoItem = (props) => {
@@ -22,7 +22,7 @@ const TodoItem = (props) => {
     }
   };
   return (
-    <motion.li
+    <li
       key={item.id}
       className="card"
     >
@@ -42,20 +42,20 @@ const TodoItem = (props) => {
             style={{ color: "green" }}
             onClick={() => completeTodo(item.id)}
           >
-            <IoCheckmarkDoneSharp />
+            <IoCheckmarkCircle />
           </motion.button>
         )}
         <motion.button
           style={{ color: "red" }}
           onClick={() => removeTodo(item.id)} >
           {" "}
-          <IoClose />
+          <IoTrashBin  />
         </motion.button>
 
       </div>
-      {item.completed && <span className="completed">done</span>}
+      {item.completed && <span className="completed">Done</span>}
        
-    </motion.li>
+    </li>
   );
 };
 

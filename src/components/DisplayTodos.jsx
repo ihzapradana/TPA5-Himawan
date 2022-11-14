@@ -30,6 +30,12 @@ const DisplayTodos = (props) => {
   return (
     <div className="displaytodos">
       <div className="buttons">
+
+      <motion.button
+          onClick={() => setSort("all")}
+        >
+          All
+        </motion.button>
     
         <motion.button
           onClick={() => setSort("active")}
@@ -43,11 +49,7 @@ const DisplayTodos = (props) => {
           Completed
         </motion.button>
 
-        <motion.button
-          onClick={() => setSort("all")}
-        >
-          All
-        </motion.button>
+        
 
       </div>
 
