@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { AiFillEdit } from "react-icons/ai";
 import { IoCheckmarkDoneSharp, IoClose } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 const TodoItem = (props) => {
   
@@ -21,7 +22,7 @@ const TodoItem = (props) => {
     }
   };
   return (
-    <li
+    <motion.li
       key={item.id}
       className="card"
     >
@@ -32,28 +33,29 @@ const TodoItem = (props) => {
         onKeyPress={(e) => update(item.id, inputRef.current.value, e)}
       />
       <div className="btns">
-        <button  onClick={() => changeFocus()}>
+        <motion.button  onClick={() => changeFocus()}>
+          {" "}
           <AiFillEdit />
-        </button>
+        </motion.button>
         {item.completed === false && (
-          <button
+          <motion.button
             style={{ color: "green" }}
             onClick={() => completeTodo(item.id)}
           >
             <IoCheckmarkDoneSharp />
-          </button>
+          </motion.button>
         )}
-        <button
+        <motion.button
           style={{ color: "red" }}
           onClick={() => removeTodo(item.id)} >
-    
+          {" "}
           <IoClose />
-        </button>
+        </motion.button>
 
       </div>
       {item.completed && <span className="completed">done</span>}
        
-    </li>
+    </motion.li>
   );
 };
 

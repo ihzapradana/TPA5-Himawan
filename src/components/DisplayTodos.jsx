@@ -7,6 +7,7 @@ import {
   updateTodos,
 } from "../redux/reducer";
 import TodoItem from "./TodoItem";
+import { motion } from "framer-motion";
 
 
 const mapStateToProps = (state) => {
@@ -30,23 +31,23 @@ const DisplayTodos = (props) => {
     <div className="displaytodos">
       <div className="buttons">
     
-        <button
+        <motion.button
           onClick={() => setSort("active")}
         >
           Active
-        </button>
+        </motion.button>
 
-        <button
+        <motion.button
           onClick={() => setSort("completed")}
         >
           Completed
-        </button>
+        </motion.button>
 
-        <button
+        <motion.button
           onClick={() => setSort("all")}
         >
           All
-        </button>
+        </motion.button>
 
       </div>
 

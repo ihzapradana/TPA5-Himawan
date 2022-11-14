@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import {connect} from 'react-redux'
+import { addTodos } from '../redux/reducer';
+import {GoPlus} from "react-icons/go"
+import { motion } from 'framer-motion';
 
 const mapStateToProps = (state) => {
     return {
@@ -36,14 +39,14 @@ const Todos = (props) => {
     return (
         <div className='addTodos'>
             <input type="text" onChange={(e) => handleChange(e)} className="todo-input" value={todo} />
-            <button className="add-btn">Add</button>
+            <motion.button className="add-btn" onClick={() => add()}><GoPlus/></motion.button>
         <br />
-        <ul>
+        {/* <ul>
         {props.todos.length > 0 &&
           props.todos.map((item) => {
             return <li key={item.id}>{item.item}</li>;
           })}
-        </ul>
+        </ul> */}
         </div>
     )
 }
