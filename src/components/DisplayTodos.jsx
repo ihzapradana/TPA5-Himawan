@@ -7,16 +7,15 @@ import {
   updateTodos,
 } from "../redux/reducer";
 import TodoItem from "./TodoItem";
-import { motion } from "framer-motion";
 
 
-const mapStateToProps = (state) => {
+const mapState = (state) => {
   return {
     todos: state,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatch = (dispatch) => {
   return {
     addTodo: (obj) => dispatch(addTodos(obj)),
     removeTodo: (id) => dispatch(removeTodos(id)),
@@ -31,26 +30,9 @@ const DisplayTodos = (props) => {
     <div className="displaytodos">
       <div className="buttons">
 
-      <motion.button
-          onClick={() => setSort("all")}
-        >
-          All
-        </motion.button>
-    
-        <motion.button
-          onClick={() => setSort("active")}
-        >
-          Active
-        </motion.button>
-
-        <motion.button
-          onClick={() => setSort("completed")}
-        >
-          Completed
-        </motion.button>
-
-        
-
+      <button onClick={() => setSort("all")} className="btn-sort">ALL</button>
+      <button onClick={() => setSort("active")} className="btn-sort">ACTIVE</button>
+      <button onClick={() => setSort("completed")} className="btn-sort">COMPLETED</button>
       </div>
 
       <ul>
@@ -72,7 +54,7 @@ const DisplayTodos = (props) => {
                 );
               })
             : null}
-          {/* for completed items */}
+        
           {props.todos.length > 0 && sort === "completed"
             ? props.todos.map((item) => {
                 return (
@@ -88,7 +70,7 @@ const DisplayTodos = (props) => {
                 );
               })
             : null}
-          {/* for all items */}
+          
           {props.todos.length > 0 && sort === "all"
             ? props.todos.map((item) => {
                 return (
@@ -108,4 +90,4 @@ const DisplayTodos = (props) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DisplayTodos);
+export default connect(mapState, mapDispatch)(DisplayTodos);

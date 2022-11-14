@@ -39,12 +39,6 @@ const Todos = (props) => {
             <input type="text" onChange={(e) => handleChange(e)} className="todo-input" value={todo} placeholder="what to do"/>
             <button className="add-btn" onClick={() => add()}>Add</button>
         <br />
-        {/* <ul>
-        {props.todos.length > 0 &&
-          props.todos.map((item) => {
-            return <li key={item.id}>{item.item}</li>;
-          })}
-        </ul> */}
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { AiFillEdit } from "react-icons/ai";
-import { IoCheckboxSharp, IoCheckmarkCircle, IoCheckmarkDone, IoCheckmarkDoneSharp, IoClose, IoTrashBin } from "react-icons/io5";
-import { motion } from "framer-motion";
+import { IoCheckmarkCircle, IoTrashBin } from "react-icons/io5";
 
 const TodoItem = (props) => {
   
@@ -9,14 +8,13 @@ const TodoItem = (props) => {
 
   const inputRef = useRef(true);
 
-  const changeFocus = () => {
+  const change = () => {
     inputRef.current.disabled = false;
     inputRef.current.focus();
   };
 
   const update = (id, value, e) => {
     if (e.which === 13) {
-      //here 13 is key code for enter key
       updateTodo({ id, item: value });
       inputRef.current.disabled = true;
     }
@@ -33,24 +31,24 @@ const TodoItem = (props) => {
         onKeyPress={(e) => update(item.id, inputRef.current.value, e)}
       />
       <div className="btns">
-        <motion.button  onClick={() => changeFocus()}>
+        <button  onClick={() => change()}>
           {" "}
           <AiFillEdit />
-        </motion.button>
+        </button>
         {item.completed === false && (
-          <motion.button
+          <button
             style={{ color: "green" }}
             onClick={() => completeTodo(item.id)}
           >
             <IoCheckmarkCircle />
-          </motion.button>
+          </button>
         )}
-        <motion.button
+        <button
           style={{ color: "red" }}
           onClick={() => removeTodo(item.id)} >
           {" "}
           <IoTrashBin  />
-        </motion.button>
+        </button>
 
       </div>
       {item.completed && <span className="completed">Done</span>}
